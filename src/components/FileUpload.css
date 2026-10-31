@@ -1,0 +1,285 @@
+.upload-container {
+  width: 100%;
+}
+
+.upload-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.upload-header h2 {
+  margin-bottom: 8px;
+}
+
+.upload-header p {
+  color: #778297;
+  margin: 0;
+}
+
+.upload-icon,
+.file-type,
+.document-icon {
+  background: #eef1ff;
+  color: #4058c8;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+}
+
+.drop-area {
+  border: 2px dashed #cbd3e5;
+  border-radius: 12px;
+  padding: 35px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  background: #fafbff;
+  color: #34415b;
+  text-align: center;
+}
+
+.drop-area:hover {
+  border-color: #5269d8;
+  background: #f5f6ff;
+}
+
+.drop-area input {
+  display: none;
+}
+
+.upload-symbol {
+  font-size: 30px;
+  color: #5269d8;
+}
+
+.drop-area span {
+  color: #778297;
+  font-size: 13px;
+}
+
+.drop-area .browse-text {
+  color: #4058c8;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.selected-section,
+.result-section {
+  margin-top: 28px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-heading h3,
+.document-list h3,
+.rejected-list h3 {
+  font-size: 15px;
+}
+
+.section-heading span {
+  color: #778297;
+  font-size: 13px;
+}
+
+.file-row,
+.document-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px;
+  border: 1px solid #e8ebf2;
+  border-radius: 9px;
+  margin-top: 10px;
+}
+
+.file-details,
+.document-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.file-details strong,
+.document-details strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.file-details span,
+.document-details span {
+  color: #778297;
+  font-size: 12px;
+}
+
+.upload-button {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  background: #4058c8;
+  color: white;
+  font-weight: 600;
+  margin-top: 18px;
+}
+
+.upload-button:hover:not(:disabled) {
+  background: #3148b2;
+}
+
+.upload-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading-message {
+  margin-top: 18px;
+  padding: 13px;
+  border-radius: 8px;
+  background: #eef3ff;
+  color: #4058c8;
+  font-size: 13px;
+}
+
+.error-message {
+  margin-top: 18px;
+  padding: 13px;
+  background: #fff0f0;
+  color: #c03939;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.success-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.success-icon {
+  background: #e6f7ef;
+  color: #168653;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.success-heading h3 {
+  margin: 0 0 5px;
+}
+
+.success-heading p {
+  margin: 0;
+  color: #778297;
+  font-size: 13px;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: #f6f8fc;
+  padding: 17px;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-card strong {
+  font-size: 25px;
+}
+
+.stat-card span {
+  color: #778297;
+  font-size: 12px;
+}
+
+.session-box {
+  background: #f6f8fc;
+  padding: 15px;
+  border-radius: 9px;
+  margin-top: 15px;
+}
+
+.session-box > span {
+  display: block;
+  color: #778297;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.session-box > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.session-box code {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.session-box button {
+  border: 1px solid #d9dfeb;
+  background: white;
+  border-radius: 6px;
+  padding: 7px 12px;
+  color: #4058c8;
+  flex-shrink: 0;
+}
+
+.document-list {
+  margin-top: 25px;
+}
+
+.document-status {
+  color: #168653;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rejected-list {
+  margin-top: 22px;
+  color: #bd4141;
+}
+
+.rejected-list p {
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .document-row {
+    flex-wrap: wrap;
+  }
+
+  .document-status {
+    width: 100%;
+    margin-left: 45px;
+  }
+
+  .session-box > div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

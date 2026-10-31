@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Inter, Arial, sans-serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.topbar {
+  height: 76px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 7%;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.topbar span {
+  color: #788397;
+  font-size: 12px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #526078;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  background: #16a36a;
+  border-radius: 50%;
+}
+
+.dashboard {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.welcome {
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  color: #5269d8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.welcome h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.welcome p:not(.eyebrow) {
+  color: #69758a;
+  line-height: 1.6;
+}
+
+.tabs {
+  display: flex;
+  gap: 25px;
+  border-bottom: 1px solid #dfe4ed;
+  margin-bottom: 25px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 14px 3px;
+  color: #69758a;
+  border-bottom: 3px solid transparent;
+}
+
+.tabs button.active {
+  color: #4058c8;
+  border-bottom-color: #4058c8;
+  font-weight: 600;
+}
+
+.panel {
+  background: #ffffff;
+  padding: 28px;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(20, 35, 70, 0.03);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.description {
+  color: #778297;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    padding: 0 18px;
+  }
+
+  .dashboard {
+    margin: 25px auto;
+    padding: 0 15px;
+  }
+
+  .welcome h1 {
+    font-size: 25px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .tabs {
+    gap: 15px;
+  }
+
+  .tabs button {
+    font-size: 13px;
+  }
+}
