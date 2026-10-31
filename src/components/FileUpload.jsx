@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../services/api";
 import "./FileUpload.css";
 
-function FileUpload() {
+function FileUpload({ onUploadSuccess }) {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -34,11 +34,19 @@ function FileUpload() {
       setLoading(true);
       setError("");
       setResult(null);
+      setCopied(false);
 
       const response = await api.post("/api/documents/upload", formData);
 
-      setResult(response.data);
+      const uploadResult = response.data;
+
+      setResult(uploadResult);
       setFiles([]);
+
+      // Send the session ID to the parent dashboard
+      if (uploadResult.session_id) {
+        onUploadSuccess?.(uploadResult.session_id);
+      }
     } catch (err) {
       setError(
         err.response?.data?.detail || "Upload failed. Please try again.",
@@ -74,6 +82,7 @@ function FileUpload() {
           <h2>Upload PDF documents</h2>
           <p>Add your PDF files to create a searchable knowledge base.</p>
         </div>
+
         <div className="upload-icon">PDF</div>
       </div>
 
@@ -102,6 +111,7 @@ function FileUpload() {
           {files.map((file, index) => (
             <div className="file-row" key={`${file.name}-${index}`}>
               <div className="file-type">PDF</div>
+
               <div className="file-details">
                 <strong>{file.name}</strong>
                 <span>{formatSize(file.size)}</span>
@@ -131,6 +141,7 @@ function FileUpload() {
         <div className="result-section">
           <div className="success-heading">
             <span className="success-icon">✓</span>
+
             <div>
               <h3>Upload completed</h3>
               <p>Your upload results are ready.</p>
@@ -152,8 +163,10 @@ function FileUpload() {
           {result.session_id && (
             <div className="session-box">
               <span>UPLOAD SESSION ID</span>
+
               <div>
                 <code>{result.session_id}</code>
+
                 <button onClick={copySessionId}>
                   {copied ? "Copied" : "Copy"}
                 </button>
@@ -168,10 +181,12 @@ function FileUpload() {
               {result.uploaded_documents.map((doc) => (
                 <div className="document-row" key={doc.document_id}>
                   <div className="document-icon">PDF</div>
+
                   <div className="document-details">
                     <strong>{doc.filename}</strong>
                     <span>{doc.page_count} pages</span>
                   </div>
+
                   <span className="document-status">Uploaded</span>
                 </div>
               ))}

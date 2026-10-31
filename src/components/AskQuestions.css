@@ -1,0 +1,158 @@
+.ask-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  color: #1f2937;
+}
+
+.ask-header {
+  margin-bottom: 24px;
+}
+
+.ask-header h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.ask-header p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.ask-notice {
+  margin-bottom: 18px;
+  padding: 14px;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 14px;
+}
+
+.ask-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ask-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ask-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.ask-form textarea:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.ask-form button {
+  align-self: flex-start;
+  min-width: 150px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ask-form button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.ask-form button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.ask-loading {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 14px;
+}
+
+.ask-error {
+  margin-top: 20px;
+  padding: 14px;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #991b1b;
+  overflow-wrap: anywhere;
+}
+
+.answer-section,
+.sources-section {
+  margin-top: 28px;
+}
+
+.answer-section h3,
+.sources-section h3 {
+  margin-bottom: 14px;
+  font-size: 19px;
+}
+
+.answer-content {
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+  color: #374151;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.source-card {
+  margin-bottom: 12px;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.source-title {
+  margin-bottom: 7px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.source-details {
+  margin-top: 5px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .ask-container {
+    padding: 16px;
+  }
+
+  .ask-form button {
+    width: 100%;
+  }
+}

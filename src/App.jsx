@@ -1,9 +1,12 @@
 import { useState } from "react";
 import FileUpload from "./components/FileUpload";
+import Processing from "./components/Processing";
+import AskQuestions from "./components/AskQuestions";
 import "./App.css";
 
 function App() {
   const [activeTab, setActiveTab] = useState("documents");
+  const [sessionId, setSessionId] = useState("");
 
   return (
     <div className="app">
@@ -12,6 +15,7 @@ function App() {
           <h2>PDF RAG</h2>
           <span>Document Intelligence Platform</span>
         </div>
+
         <div className="status">
           <span className="status-dot"></span>
           Local system
@@ -55,38 +59,19 @@ function App() {
 
         {activeTab === "documents" && (
           <section className="panel">
-            <h2>Upload PDF documents</h2>
-            <p className="description">
-              Upload multiple PDF files to create a searchable document
-              collection.
-            </p>
-            <FileUpload />
+            <FileUpload onUploadSuccess={setSessionId} />
           </section>
         )}
 
         {activeTab === "processing" && (
           <section className="panel">
-            <h2>Document processing pipeline</h2>
-            <p className="description">
-              Track the progress of extraction, chunking, embedding generation,
-              and indexing.
-            </p>
-            <p>
-              Processing controls will be connected to the backend in the next
-              step.
-            </p>
+            <Processing sessionId={sessionId} />
           </section>
         )}
 
         {activeTab === "chat" && (
           <section className="panel">
-            <h2>Ask your documents</h2>
-            <p className="description">
-              Ask questions and receive answers grounded in your uploaded PDFs.
-            </p>
-            <p>
-              The chat interface and source citations will be connected next.
-            </p>
+            <AskQuestions sessionId={sessionId} />
           </section>
         )}
       </main>
